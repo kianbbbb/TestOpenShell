@@ -189,9 +189,11 @@ class TestTaskGraphSummary:
         tg = TaskGraph(task_name="test")
         tg.start()
         s = tg.summary()
-        for key in ("task_id", "task_name", "status", "commands_run",
-                    "commands_failed", "evidence_items", "artifacts",
-                    "graph_nodes", "graph_edges"):
+        for key in [
+            "task_id", "task_name", "status", "commands_run",
+            "commands_failed", "evidence_items", "artifacts",
+            "graph_nodes", "graph_edges",
+        ]:
             assert key in s
 
     def test_summary_counts(self):

@@ -26,8 +26,10 @@ class TestCommandResult:
 
     def test_to_dict_keys(self):
         d = self._make().to_dict()
-        for key in ("command", "stdout", "stderr", "exit_code", "duration_ms",
-                    "timestamp", "span_id", "success"):
+        for key in [
+            "command", "stdout", "stderr", "exit_code",
+            "duration_ms", "timestamp", "span_id", "success",
+        ]:
             assert key in d
 
     def test_repr(self):
